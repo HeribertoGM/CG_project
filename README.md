@@ -1,4 +1,4 @@
-## CG_proyect
+## CG_project
 
 Proyecto Final para clase de Gráficas Computacionales
 
