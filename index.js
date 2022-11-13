@@ -3,6 +3,14 @@ let origin = null;
 let camera = null;
 let mapSize = 0;
 
+let blockTexture = null;
+let floorTexture = null;
+
+function preload() {
+	blockTexture = loadImage("./resources/Mossy_Cobblestone.png");
+	floorTexture = loadImage("./resources/Grass_block.png");
+}
+
 function setup() {
 	// Space reference
 	createCanvas(windowWidth, windowHeight, WEBGL);
@@ -26,12 +34,11 @@ function draw() {
 	// Generals
 	background(175);
 	angleMode(DEGREES);
-	lightFalloff(0.4, 0, 0.0001);
+	lightFalloff(0.01, 0, 0.0001);
 	pointLight(WHITE, camera.eyeX, camera.eyeY, camera.eyeZ);
 	// Floor
 	push();
-	// fill(0, 255, 255);
-	ambientMaterial(255);
+	texture(floorTexture);
 	noStroke();
 	rotateX(90);
 	translate(origin.x + mapSize / 2, origin.z + mapSize / 2);
@@ -48,8 +55,7 @@ function draw() {
 					origin.y - 26,
 					origin.z + 25 + j * 50
 				);
-				// fill(255);
-				ambientMaterial(255);
+				texture(blockTexture);
 				stroke(0);
 				box(50);
 				pop();
@@ -59,8 +65,7 @@ function draw() {
 					origin.y - 76,
 					origin.z + 25 + j * 50
 				);
-				// fill(255);
-				ambientMaterial(255);
+				texture(blockTexture);
 				stroke(0);
 				box(50);
 				pop();
@@ -73,10 +78,8 @@ function draw() {
 function keyPressed() {
 	if (keyCode === LEFT_ARROW) {
 		camera.pan(90);
-		// camera.move(-50, 0, 0);
 	} else if (keyCode === RIGHT_ARROW) {
 		camera.pan(-90);
-		// camera.move(50, 0, 0);
 	} else if (keyCode === UP_ARROW) {
 		if (canGo(camera)) {
 			camera.move(0, 0, -50);
