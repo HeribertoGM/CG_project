@@ -1,3 +1,4 @@
+let WHITE = [255, 255, 255];
 let origin = null;
 let camera = null;
 let mapSize = 0;
@@ -25,10 +26,14 @@ function draw() {
 	// Generals
 	background(175);
 	angleMode(DEGREES);
+	lightFalloff(0.4, 0, 0.0001);
+	pointLight(WHITE, camera.eyeX, camera.eyeY, camera.eyeZ);
 	// Floor
 	push();
+	// fill(0, 255, 255);
+	ambientMaterial(255);
+	noStroke();
 	rotateX(90);
-	fill(0, 255, 255);
 	translate(origin.x + mapSize / 2, origin.z + mapSize / 2);
 	plane(mapSize, mapSize);
 	pop();
@@ -43,7 +48,9 @@ function draw() {
 					origin.y - 26,
 					origin.z + 25 + j * 50
 				);
-				fill(255);
+				// fill(255);
+				ambientMaterial(255);
+				stroke(0);
 				box(50);
 				pop();
 				push();
@@ -52,7 +59,9 @@ function draw() {
 					origin.y - 76,
 					origin.z + 25 + j * 50
 				);
-				fill(255);
+				// fill(255);
+				ambientMaterial(255);
+				stroke(0);
 				box(50);
 				pop();
 			}
