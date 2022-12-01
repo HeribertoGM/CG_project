@@ -16,3 +16,4 @@ El usuario podra recorrer el laberinto con las flechas del teclado
 -   LEFT_ARROW: gira a la izquierda
 
 (NOTA: para mas informacion del Player abrir consola)
+(NOTA: Diseño de página principal por: [Colorlib](https://colorlib.com/wp/template/login-form-v4/)
