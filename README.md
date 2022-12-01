@@ -9,6 +9,8 @@ Framework: p5.js
 Pagina que cree automaticamente laberintos aleatorios en un entorno 3D,
 El usuario podra recorrer el laberinto con las flechas del teclado
 
+Live on: [Github Page](https://heribertogm.github.io/CG_project/)
+
 #### Controles:
 
 -   UP_ARROW: avanza un paso
